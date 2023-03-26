@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hello_word/utils/app_layout.dart';
 import 'package:flutter_hello_word/utils/app_styles.dart';
 import 'package:flutter_hello_word/widgets/icon_text_widget.dart';
+import 'package:flutter_hello_word/widgets/ticket_tabs.dart';
 import 'package:gap/gap.dart';
 
 import '../widgets/double_text_widget.dart';
@@ -27,42 +28,7 @@ class SearchScreen extends StatelessWidget {
               style: Styles.headLine1Style.copyWith(
                   fontSize: Applayout.getWidth(35)),),
             Gap(Applayout.getHeight(20)),
-            FittedBox(
-              child: Container(
-                padding: const EdgeInsets.all(3.5),
-                child: Row(
-                  children: [
-                    Container(
-                      width: size.width * .44,
-                      padding: EdgeInsets.symmetric(
-                          vertical: Applayout.getHeight(7)),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.horizontal(
-                              left: Radius.circular(Applayout.getWidth(50))),
-                          color: Colors.white
-                      ),
-                      child: Center(child: Text("Airline tickets")),
-                    ),
-
-                    Container(
-                      width: size.width * .44,
-                      padding: EdgeInsets.symmetric(
-                          vertical: Applayout.getHeight(7)),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.horizontal(
-                              right: Radius.circular(Applayout.getWidth(50))),
-                          color: Colors.transparent
-                      ),
-                      child: Center(child: Text("Hotels")),
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                        Applayout.getHeight(50)),
-                    color: const Color(0xFFF4F6FD)
-                ),
-              ),),
+            AppTicketTabs(fistTab:"Airline tickets",secondTab: "Hotels"),
             Gap(Applayout.getHeight(25)),
 
             const AppIconText(
@@ -96,7 +62,7 @@ class SearchScreen extends StatelessWidget {
               children: [
 
                 Container(
-                  height: Applayout.getHeight(400),
+                  height: Applayout.getHeight(425),
                   width: size.width * .42,
                   padding: EdgeInsets.symmetric(
                       horizontal: Applayout.getHeight(15),
@@ -179,7 +145,7 @@ class SearchScreen extends StatelessWidget {
                             ))
                       ],
                     ),
-
+                    Gap(Applayout.getHeight(15)),
                     Container(
                       width: size.width * .44,
                       height: Applayout.getHeight(200),
@@ -194,17 +160,29 @@ class SearchScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Discount\n for survey",
+                          Text("Take Love",
                             style: Styles.headLine2Style.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),),
-                          Gap(Applayout.getHeight(10)),
-                          Text(
-                            "property you need to create as show below by wrapping the widget ",
-                            style: Styles.headLine2Style.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 18),)
+                          Gap(Applayout.getHeight(5)),
+                          RichText(text:
+                              const TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: '😍',
+                                    style:  TextStyle(fontSize: 38)
+                                  ),
+                                  TextSpan(
+                                      text: '😍',
+                                      style:  TextStyle(fontSize: 50)
+                                  ),
+                                  TextSpan(
+                                      text: '😍',
+                                      style:  TextStyle(fontSize: 38)
+                                  )
+                                ]
+                              )
+                          )
                         ],
                       ),
                     )
